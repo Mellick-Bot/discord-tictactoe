@@ -14,7 +14,7 @@ import {
     PermissionString,
     Role,
     TextChannel
-} from 'discord.js';
+} from 'fosscord-gopnik';
 
 describe('GameStateValidator', () => {
     let tunnel: MessagingTunnel;

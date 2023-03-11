@@ -1,5 +1,5 @@
 import MessagingTunnel, { MessagingAnswer } from '@bot/messaging/MessagingTunnel';
-import { GuildMember, Message, TextChannel } from 'discord.js';
+import { GuildMember, Message, TextChannel } from 'fosscord-gopnik';
 
 /**
  * Represents a text messaging channel

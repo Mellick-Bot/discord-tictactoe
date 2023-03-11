@@ -2,7 +2,7 @@ import GameBoardButtonBuilder from '@bot/builder/GameBoardButtonBuilder';
 import localize from '@i18n/localize';
 import AI from '@tictactoe/ai/AI';
 import { Player } from '@tictactoe/Player';
-import { MessageButton } from 'discord.js';
+import { MessageButton } from 'fosscord-gopnik';
 
 jest.mock('@tictactoe/ai/AI');
 

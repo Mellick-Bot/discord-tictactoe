@@ -6,7 +6,7 @@ import {
     MessageButton,
     MessageButtonStyleResolvable,
     MessageOptions
-} from 'discord.js';
+} from 'fosscord-gopnik';
 
 /**
  * Builds representation of a game board using buttons
@@ -112,7 +112,7 @@ export default class GameBoardButtonBuilder extends GameBoardBuilder {
      *
      * @param row button placement row
      * @param col button placement column
-     * @returns button discord.js object
+     * @returns button fosscord-gopnik object
      */
     private createButton(row: number, col: number): MessageButton {
         const button = new MessageButton();

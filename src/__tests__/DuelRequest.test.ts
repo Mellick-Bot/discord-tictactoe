@@ -3,7 +3,7 @@ import ComponentInteractionMessagingTunnel from '@bot/messaging/ComponentInterac
 import MessagingTunnel from '@bot/messaging/MessagingTunnel';
 import GameStateManager from '@bot/state/GameStateManager';
 import localize from '@i18n/localize';
-import { Collection, GuildMember, Message } from 'discord.js';
+import { Collection, GuildMember, Message } from 'fosscord-gopnik';
 
 jest.mock('@bot/messaging/ComponentInteractionMessagingTunnel');
 jest.mock('@i18n/localize');

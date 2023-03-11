@@ -1,5 +1,5 @@
 import TextMessagingTunnel from '@bot/messaging/TextMessagingTunnel';
-import { GuildMember, Message, TextChannel } from 'discord.js';
+import { GuildMember, Message, TextChannel } from 'fosscord-gopnik';
 
 describe('TextMessagingTunnel', () => {
     const createTunnel = (origin: Message) => new TextMessagingTunnel(origin);

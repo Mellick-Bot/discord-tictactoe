@@ -1,5 +1,5 @@
 import AppCommandRegister from '@bot/command/AppCommandRegister';
-import { ApplicationCommandManager, Message } from 'discord.js';
+import { ApplicationCommandManager, Message } from 'fosscord-gopnik';
 
 jest.mock('@i18n/localize');
 

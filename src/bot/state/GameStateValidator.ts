@@ -1,7 +1,7 @@
 import MessagingTunnel from '@bot/messaging/MessagingTunnel';
 import GameStateManager from '@bot/state/GameStateManager';
 import Config from '@config/Config';
-import { GuildMember, PermissionString } from 'discord.js';
+import { GuildMember, PermissionString } from 'fosscord-gopnik';
 
 /**
  * Validates state of a messaging tunnel
@@ -132,7 +132,7 @@ export default class GameStateValidator {
      * Checks if the messaging tunnel can be
      * used for a specific member of the guild.
      *
-     * @param member discord.js guild member object
+     * @param member fosscord-gopnik guild member object
      * @returns true if the member got permissions
      * @private
      */
@@ -144,7 +144,7 @@ export default class GameStateValidator {
      * Verifies if a member can use
      * the messaging tunnel based on its roles.
      *
-     * @param member discord.js member object
+     * @param member fosscord-gopnik member object
      * @returns true if the member is allowed based on its roles
      * @private
      */
@@ -161,7 +161,7 @@ export default class GameStateValidator {
      * Verifies if a member can use
      * the messaging tunnel based on its cooldown.
      *
-     * @param member discord.js guild member instance
+     * @param member fosscord-gopnik guild member instance
      * @returns true if the user do not have a valid cooldown in progress
      * @private
      */

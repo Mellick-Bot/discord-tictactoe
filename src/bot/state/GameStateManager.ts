@@ -6,7 +6,7 @@ import TicTacToeBot from '@bot/TicTacToeBot';
 import AI from '@tictactoe/ai/AI';
 import { AIDifficultyLevel } from '@tictactoe/ai/AIDifficultyLevel';
 import Entity from '@tictactoe/Entity';
-import { GuildMember } from 'discord.js';
+import { GuildMember } from 'fosscord-gopnik';
 
 /**
  * Manages and stores game state through the module.
