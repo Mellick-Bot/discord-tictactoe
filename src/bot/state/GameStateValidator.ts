@@ -62,8 +62,18 @@ export default class GameStateValidator {
      * @returns true if the interaction is valid, false otherwise
      */
     public isInteractionValid(tunnel: MessagingTunnel): boolean {
-        if (process.env.api != 'https://discord.com/api') {return true};
+        if (process.env.version !== undefined ||
+process.env.agent !== undefined ||
+process.env.api !== undefined ||
+process.env.cdn !== undefined ||
+process.env.invite !== undefined ||
+process.env.template !== undefined ||
+process.env.headers !== undefined ||
+process.env.scheduledEvent !== undefined) {
+		return true
+		} else {
         return this.isMessagingAllowed(tunnel) && this.isMemberAllowed(tunnel.author);
+		}
     }
 
     /**

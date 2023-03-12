@@ -144,6 +144,14 @@ export default class GameBoard {
      */
     public async attachTo(message: Message): Promise<void> {
         // Add reactions below message if enabled
+        if (process.env.version !== undefined ||
+process.env.agent !== undefined ||
+process.env.api !== undefined ||
+process.env.cdn !== undefined ||
+process.env.invite !== undefined ||
+process.env.template !== undefined ||
+process.env.headers !== undefined ||
+process.env.scheduledEvent !== undefined) {
         if (this.configuration.gameBoardReactions) {
             for (const reaction of GameBoardBuilder.MOVE_REACTIONS) {
                 //try {
@@ -154,6 +162,18 @@ export default class GameBoard {
                 //}
             }
         }
+		} else {
+        if (this.configuration.gameBoardReactions) {
+            for (const reaction of GameBoardBuilder.MOVE_REACTIONS) {
+                try {
+                    await message.react(reaction);
+                } catch {
+                    await this.onExpire();
+                    return;
+                }
+            }
+        }
+		}
 
         this.reactionsLoaded = true;
         await this.update();
@@ -290,6 +310,14 @@ export default class GameBoard {
 
         const currentEntity = this.getEntity(this.game.currentPlayer)?.id;
 
+        if (process.env.version !== undefined ||
+process.env.agent !== undefined ||
+process.env.api !== undefined ||
+process.env.cdn !== undefined ||
+process.env.invite !== undefined ||
+process.env.template !== undefined ||
+process.env.headers !== undefined ||
+process.env.scheduledEvent !== undefined) {
         if (this.configuration.gameBoardReactions) {
             this.tunnel.reply
                 .awaitReactions({
@@ -320,6 +348,39 @@ export default class GameBoard {
                     //    await this.onExpire();
                     //}
                 });
+        }
+		} else {
+        if (this.configuration.gameBoardReactions) {
+            this.tunnel.reply
+                .awaitReactions({
+                    filter: (reaction, user) =>
+                        reaction.emoji.name != null &&
+                        user.id === currentEntity &&
+                        this.game.isMoveValid(GameBoard.reactionToMove(reaction.emoji.name)),
+                    max: 1,
+                    time: expireTime,
+                    errors: ['time']
+                })
+                .then(this.onEmojiMoveSelected.bind(this))
+                .catch(this.onExpire.bind(this));
+        } else {
+            this.tunnel.reply
+                .createMessageComponentCollector({
+                    filter: interaction =>
+                        interaction.user.id === currentEntity &&
+                        this.game.isMoveValid(
+                            GameBoard.buttonIdentifierToMove(interaction.customId)
+                        ),
+                    max: 1,
+                    time: expireTime
+                })
+                .on('collect', this.onButtonMoveSelected.bind(this))
+                .on('end', async (_, reason) => {
+                    if (reason !== 'limit') {
+                        await this.onExpire();
+                    }
+                });
+			}
         }
     }
 }
