@@ -8,7 +8,7 @@ import AI from '@tictactoe/ai/AI';
 import Entity from '@tictactoe/Entity';
 import Game from '@tictactoe/Game';
 import { Player } from '@tictactoe/Player';
-import { Collection, Message } from 'fosscord-gopnik';
+import { Collection, Message } from 'discord.js';
 
 jest.mock('@bot/builder/GameBoardBuilder');
 jest.mock('@bot/builder/GameBoardButtonBuilder');

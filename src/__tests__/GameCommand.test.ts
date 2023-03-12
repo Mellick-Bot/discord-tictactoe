@@ -4,7 +4,7 @@ import MessagingTunnel from '@bot/messaging/MessagingTunnel';
 import TextMessagingTunnel from '@bot/messaging/TextMessagingTunnel';
 import GameStateManager from '@bot/state/GameStateManager';
 import localize from '@i18n/localize';
-import { BaseCommandInteraction, GuildMember, Message } from 'fosscord-gopnik';
+import { BaseCommandInteraction, GuildMember, Message } from 'discord.js';
 
 jest.mock('@bot/messaging/CommandInteractionMessagingTunnel');
 jest.mock('@bot/messaging/TextMessagingTunnel');

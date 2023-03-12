@@ -1,5 +1,5 @@
 import localize from '@i18n/localize';
-import { ApplicationCommandManager, Message } from 'fosscord-gopnik';
+import { ApplicationCommandManager, Message } from 'discord.js';
 
 /**
  * Manages application command used by the module.
@@ -9,7 +9,7 @@ import { ApplicationCommandManager, Message } from 'fosscord-gopnik';
  */
 export default class AppCommandRegister {
     /**
-     * fosscord-gopnik application command manager instance
+     * discord.js application command manager instance
      * @private
      */
     private readonly commandManager: ApplicationCommandManager;
@@ -27,7 +27,7 @@ export default class AppCommandRegister {
     /**
      * Constructs application command registration handler.
      *
-     * @param commandManager fosscord-gopnik client instance
+     * @param commandManager discord.js client instance
      * @param name application name to register
      * @param optionName name of the option to mention another user
      */
@@ -41,7 +41,7 @@ export default class AppCommandRegister {
      * Handles messages to deploy or delete
      * the application command in a specific guild.
      *
-     * @param message fosscord-gopnik message object
+     * @param message discord.js message object
      */
     public async handleDeployMessage(message: Message): Promise<void> {
         if (

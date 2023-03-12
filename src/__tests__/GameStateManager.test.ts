@@ -7,7 +7,7 @@ import TicTacToeBot from '@bot/TicTacToeBot';
 import AI from '@tictactoe/ai/AI';
 import { AIDifficultyLevel } from '@tictactoe/ai/AIDifficultyLevel';
 import Entity from '@tictactoe/Entity';
-import { GuildMember } from 'fosscord-gopnik';
+import { GuildMember } from 'discord.js';
 
 jest.mock('@bot/entity/DuelRequest');
 jest.mock('@bot/entity/GameBoard');

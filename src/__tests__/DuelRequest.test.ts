@@ -3,7 +3,7 @@ import ComponentInteractionMessagingTunnel from '@bot/messaging/ComponentInterac
 import MessagingTunnel from '@bot/messaging/MessagingTunnel';
 import GameStateManager from '@bot/state/GameStateManager';
 import localize from '@i18n/localize';
-import { Collection, GuildMember, Message } from 'fosscord-gopnik';
+import { Collection, GuildMember, Message } from 'discord.js';
 
 jest.mock('@bot/messaging/ComponentInteractionMessagingTunnel');
 jest.mock('@i18n/localize');
@@ -41,17 +41,6 @@ describe('DuelRequest', () => {
     });
 
     describe('Content', () => {
-        test('should add buttons if reactions are disabled', () => {
-            Object.assign(duelRequest, { useReactions: false });
-            expect(duelRequest.content.components).toHaveLength(1);
-            expect(duelRequest.content.components![0].components).toHaveLength(2);
-        });
-
-        test('should not add buttons if reactions are enabled', () => {
-            Object.assign(duelRequest, { useReactions: true });
-            expect(duelRequest.content.components).toHaveLength(0);
-        });
-
         test('should set content to string representation of the invited member', () => {
             const content = 'invited member name';
             jest.spyOn(invited, 'toString').mockReturnValue(content as any);

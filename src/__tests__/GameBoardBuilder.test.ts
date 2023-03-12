@@ -21,7 +21,6 @@ describe('GameBoardBuilder', () => {
         expect(builder.toMessageOptions()).toEqual({
             allowedMentions: { parse: ['users'] },
             content: '',
-            components: [],
             embeds: []
         });
     });

@@ -1,13 +1,13 @@
 import EventHandler from '@bot/EventHandler';
 import TicTacToeBot from '@bot/TicTacToeBot';
 import localize from '@i18n/localize';
-import { Client, CommandInteraction, Message } from 'fosscord-gopnik';
+import { Client, CommandInteraction, Message } from 'discord.js';
 import TicTacToe from '../index';
 
 jest.mock('@bot/EventHandler');
 jest.mock('@bot/TicTacToeBot');
 jest.mock('@i18n/localize');
-jest.mock('fosscord-gopnik');
+jest.mock('discord.js');
 
 describe('TicTacToe', () => {
     let bot: TicTacToeBot;

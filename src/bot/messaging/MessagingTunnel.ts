@@ -1,4 +1,4 @@
-import { GuildMember, Message, TextChannel, WebhookEditMessageOptions } from 'fosscord-gopnik';
+import { GuildMember, Message, TextChannel, WebhookEditMessageOptions } from 'discord.js';
 
 /**
  * Represents a possible answer

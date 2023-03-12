@@ -3,7 +3,7 @@ import localize from '@i18n/localize';
 import AI from '@tictactoe/ai/AI';
 import Entity from '@tictactoe/Entity';
 import { Player } from '@tictactoe/Player';
-import { MessageOptions } from 'fosscord-gopnik';
+import { MessageOptions } from 'discord.js';
 
 /**
  * Builds representation of a game board using text emojis
@@ -176,8 +176,7 @@ export default class GameBoardBuilder {
             embeds: this.embedColor
                 ? [{ title: this.title, description: board + state, color: this.embedColor }]
                 : [],
-            content: !this.embedColor ? this.title + board + state : undefined,
-            components: []
+            content: !this.embedColor ? this.title + board + state : undefined
         };
     }
 }

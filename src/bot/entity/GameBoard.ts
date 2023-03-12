@@ -13,7 +13,7 @@ import {
     MessageReaction,
     Snowflake,
     WebhookEditMessageOptions
-} from 'fosscord-gopnik';
+} from 'discord.js';
 
 /**
  * Message sent to display the status of a game board.
@@ -140,18 +140,18 @@ export default class GameBoard {
      * Attachs the duel request to a specific message
      * and reacts to it in order to get processed.
      *
-     * @param message fosscord-gopnik message object to attach
+     * @param message discord.js message object to attach
      */
     public async attachTo(message: Message): Promise<void> {
         // Add reactions below message if enabled
         if (this.configuration.gameBoardReactions) {
             for (const reaction of GameBoardBuilder.MOVE_REACTIONS) {
-                try {
+                //try {
                     await message.react(reaction);
-                } catch {
-                    await this.onExpire();
-                    return;
-                }
+                //} catch {
+                //    await this.onExpire();
+                //    return;
+                //}
             }
         }
 
@@ -302,7 +302,7 @@ export default class GameBoard {
                     errors: ['time']
                 })
                 .then(this.onEmojiMoveSelected.bind(this))
-                .catch(this.onExpire.bind(this));
+                //.catch(this.onExpire.bind(this));
         } else {
             this.tunnel.reply
                 .createMessageComponentCollector({
@@ -316,9 +316,9 @@ export default class GameBoard {
                 })
                 .on('collect', this.onButtonMoveSelected.bind(this))
                 .on('end', async (_, reason) => {
-                    if (reason !== 'limit') {
-                        await this.onExpire();
-                    }
+                    //if (reason !== 'limit') {
+                    //    await this.onExpire();
+                    //}
                 });
         }
     }

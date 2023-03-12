@@ -4,7 +4,7 @@ import TextMessagingTunnel from '@bot/messaging/TextMessagingTunnel';
 import GameStateManager from '@bot/state/GameStateManager';
 import CommandConfig from '@config/CommandConfig';
 import localize from '@i18n/localize';
-import { GuildMember, Interaction, Message } from 'fosscord-gopnik';
+import { GuildMember, Interaction, Message } from 'discord.js';
 
 /**
  * Command to start a duel with someone else.
@@ -37,7 +37,7 @@ export default class GameCommand {
     /**
      * Handles an incoming message.
      *
-     * @param message fosscord-gopnik message instance
+     * @param message discord.js message instance
      * @param noTrigger true to bypass trigger checks
      */
     public async handleMessage(message: Message, noTrigger = false): Promise<void> {
@@ -60,7 +60,7 @@ export default class GameCommand {
     /**
      * Handles an incoming interaction.
      *
-     * @param interaction fosscord-gopnik interaction instance
+     * @param interaction discord.js interaction instance
      * @param noTrigger true to bypass trigger checks
      */
     public async handleInteraction(interaction: Interaction, noTrigger = false): Promise<void> {
@@ -89,8 +89,8 @@ export default class GameCommand {
      * Validates and handles an invitation if its valid.
      *
      * @param tunnel game messaging tunnel
-     * @param inviter fosscord-gopnik inviter member instance
-     * @param invited fosscord-gopnik invited member instance, can be undefined to play against AI
+     * @param inviter discord.js inviter member instance
+     * @param invited discord.js invited member instance, can be undefined to play against AI
      */
     private async processInvitation(
         tunnel: MessagingTunnel,
@@ -118,7 +118,7 @@ export default class GameCommand {
      * or requesting a duel between two members.
      *
      * @param tunnel game messaging tunnel
-     * @param invited fosscord-gopnik invited member instance, can be undefined to play against AI
+     * @param invited discord.js invited member instance, can be undefined to play against AI
      */
     private async handleInvitation(tunnel: MessagingTunnel, invited?: GuildMember): Promise<void> {
         let handler: Promise<void>;

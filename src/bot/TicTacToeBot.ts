@@ -3,7 +3,7 @@ import GameCommand from '@bot/command/GameCommand';
 import EventHandler from '@bot/EventHandler';
 import GameStateManager from '@bot/state/GameStateManager';
 import Config from '@config/Config';
-import { Client, CommandInteraction, Message } from 'fosscord-gopnik';
+import { Client, CommandInteraction, Message } from 'discord.js';
 
 /**
  * Manages all interactions with the Discord bot.
@@ -58,7 +58,7 @@ export default class TicTacToeBot {
      * Attaches a new Discord client
      * to the module by preparing command handing.
      *
-     * @param client fosscord-gopnik client obbject
+     * @param client discord.js client obbject
      */
     public attachToClient(client: Client): void {
         const onReady = () => {
@@ -87,18 +87,18 @@ export default class TicTacToeBot {
     }
 
     /**
-     * Programmatically handles a fosscord-gopnik message to request a game.
+     * Programmatically handles a discord.js message to request a game.
      *
-     * @param message fosscord-gopnik message object
+     * @param message discord.js message object
      */
     public handleMessage(message: Message): void {
         this.command.handleMessage(message, true);
     }
 
     /**
-     * Programmatically handles a fosscord-gopnik interaction to request a game.
+     * Programmatically handles a discord.js interaction to request a game.
      *
-     * @param interaction fosscord-gopnik interaction object
+     * @param interaction discord.js interaction object
      */
     public handleInteraction(interaction: CommandInteraction): void {
         this.command.handleInteraction(interaction, true);

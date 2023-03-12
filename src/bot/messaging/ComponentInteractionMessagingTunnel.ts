@@ -1,5 +1,5 @@
 import MessagingTunnel, { MessagingAnswer } from '@bot/messaging/MessagingTunnel';
-import { GuildMember, Message, MessageComponentInteraction, TextChannel } from 'fosscord-gopnik';
+import { GuildMember, Message, MessageComponentInteraction, TextChannel } from 'discord.js';
 
 /**
  * Represents an interaction messaging channel
@@ -67,7 +67,6 @@ export default class ComponentInteractionMessagingTunnel extends MessagingTunnel
             await this.interaction.editReply(answer);
         } else {
             this._reply = (await this.interaction.update({
-                components: [],
                 embeds: [],
                 ...answer,
                 fetchReply: true
