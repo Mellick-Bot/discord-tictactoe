@@ -22,25 +22,25 @@
   ],
   "dependencies": {
     "discord-backup": "git+https://github.com/Mellick-Bot/discord-backup",
-    "discord.js": "^13.13.1",
+    "discord.js": "13.13.1",
     "fosscord-gopnik": "git+https://github.com/Mellick-Bot/fosscord-gopnik",
     "fosscord.js": "git+https://github.com/Mellick-Bot/fosscord.js",
     "fosscord.js-builders": "git+https://github.com/Mellick-Bot/fosscord.js-builders"
   },
   "devDependencies": {
-    "@types/jest": "^28.1.8",
-    "@types/node": "^16.18.14",
-    "@typescript-eslint/eslint-plugin": "^5.54.1",
-    "@typescript-eslint/parser": "^5.54.1",
-    "eslint": "^8.36.0",
-    "eslint-config-prettier": "^8.7.0",
-    "eslint-plugin-jest": "^26.9.0",
-    "jest": "^28.1.3",
-    "prettier": "^2.8.4",
-    "replace-in-file": "^6.3.5",
-    "rimraf": "^3.0.2",
-    "ts-jest": "^28.0.8",
-    "typescript": "^4.9.5"
+    "@types/jest": "28.1.8",
+    "@types/node": "16.18.14",
+    "@typescript-eslint/eslint-plugin": "5.54.1",
+    "@typescript-eslint/parser": "5.54.1",
+    "eslint": "8.36.0",
+    "eslint-config-prettier": "8.7.0",
+    "eslint-plugin-jest": "26.9.0",
+    "jest": "28.1.3",
+    "prettier": "2.8.4",
+    "replace-in-file": "6.3.5",
+    "rimraf": "3.0.2",
+    "ts-jest": "28.0.8",
+    "typescript": "4.9.5"
   },
   "engines": {
     "node": ">= 16.6.0"
